@@ -1,4 +1,5 @@
 import numpy as np
+import cvxpy
 
 class ThesholdAlgorithm:
     def __init__(self, p_min, p_max):
@@ -32,8 +33,16 @@ class ThesholdAlgorithm:
 
 
 class OptimalAlgorithm:
-    def __init__(self):
-        pass
-
     def solve(self, v, w):
-        pass    
+        assert len(v) == len(w)
+        
+        T = len(v)
+        x = cvxpy.Bool(T)
+
+        constraints = w * x <= 1
+        utility = v * x
+
+        problem = cvxpy.Problem(cvxpy.Maximize(utility), [constraints])
+        problem.solve(solver=cvxpy.GLPK_MI)
+
+        return problem.value
