@@ -1,7 +1,7 @@
 import numpy as np
 import cvxpy
 
-class ThesholdAlgorithm:
+class ThresholdAlgorithm:
     def __init__(self, p_min, p_max):
         self.p_min = p_min
         self.p_max = p_max
@@ -35,7 +35,7 @@ class ThesholdAlgorithm:
 class OptimalAlgorithm:
     def solve(self, v, w):
         assert len(v) == len(w)
-        
+
         T = len(v)
         x = cvxpy.Bool(T)
 
