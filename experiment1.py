@@ -10,7 +10,7 @@ def main():
     data = DataGenerator(p_min , p_max)
 
     n_experiments = 100
-    Ts = [100, 1000, 10000, 10000]
+    Ts = [100, 1000, 10000]
 
     optimal_algorithm = OptimalAlgorithm()
     threshold_algorithm = ThresholdAlgorithm(p_min, p_max)

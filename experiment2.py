@@ -6,8 +6,8 @@ from data import DataGenerator
 
 def main():
     p_min, p_max = 2, 5
-    T = 1000
-    epsilons = [1e-2, 1e-1, 1, 10, 100]
+    T = 500
+    epsilons = [1e-3, 1e-2, 1e-1, 1]
     data = DataGenerator(p_min , p_max)
 
     n_experiments = 100
