@@ -37,12 +37,12 @@ class OptimalAlgorithm:
         assert len(v) == len(w)
 
         T = len(v)
-        x = cvxpy.Bool(T)
+        x = cvxpy.Variable(T, boolean=True)
 
         constraints = w * x <= 1
-        utility = v * x
+        utility = cvxpy.sum(v * x)
 
         problem = cvxpy.Problem(cvxpy.Maximize(utility), [constraints])
-        problem.solve(solver=cvxpy.GLPK_MI)
+        problem.solve(solver='ECOS_BB')
 
         return problem.value
