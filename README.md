@@ -16,7 +16,7 @@ All steps assume that you are in the current directory
 To execute the first experiment described in the homework run
 `python3 experiment1.py`
 
-To execute the first experiment described in the homework run
+To execute the second experiment described in the homework run
 `python3 experiment2.py`
 
 The results of the experiments will be saved in the output folder.
