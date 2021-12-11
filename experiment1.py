@@ -42,6 +42,7 @@ def main():
     plt.plot(results["T"], results["ratio"])
     plt.xlabel("T")
     plt.ylabel("Average OPT/ALG")
+    plt.xscale("log")
     plt.savefig(os.path.join(root, "output", "ratio_vs_T.png"))
 
 

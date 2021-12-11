@@ -41,6 +41,7 @@ def main():
     root = os.path.dirname(__file__)
     plt.plot(results["epsilon"], results["ratio"])
     plt.xlabel("epsilon")
+    plt.xscale("log")
     plt.ylabel("Average OPT/ALG")
     plt.savefig(os.path.join(root, "output", "epsilon_vs_T.png"))
 
