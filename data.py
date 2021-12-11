@@ -5,7 +5,7 @@ class DataGenerator:
         self.p_min = p_min
         self.p_max = p_max
 
-    def generate(self, T, epsilon=1e-8):
+    def generate(self, T, epsilon=1e-3):
         w = np.random.uniform(0, epsilon, size=T)
         v = np.random.uniform(self.p_min, self.p_max, size=T) * w
 
